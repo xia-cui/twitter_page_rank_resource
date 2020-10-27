@@ -23,7 +23,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Links
 
 cur.execute('''CREATE TABLE IF NOT EXISTS Webs (url TEXT UNIQUE)''')
 
-# Check to see if we are already in progress...
+# Check to see if we are already in progress
 cur.execute('SELECT id,url FROM Pages WHERE html is NULL and error is NULL ORDER BY RANDOM() LIMIT 1')
 row = cur.fetchone()
 if row is not None:
